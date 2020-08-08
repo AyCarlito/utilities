@@ -1,0 +1,20 @@
+#!/bin/bash
+
+ARGTYPE="$1"
+PROJECTNAME="$2"
+
+case $ARGTYPE in
+
+    create)
+        mkdir $PROJECTNAME
+        cd $PROJECTNAME
+        git init
+        curl -H "Authorization: token {INSERT_TOKEN}" --data '{"name": "'"$PROJECTNAME"'"}' https://api.github.com/user/repos
+        echo "# $PROJECTNAME" >> README.md
+        git add README.md
+        git commit -m "first commit"
+        git remote add origin https://github.com/AyCarlito/$PROJECTNAME.git
+        git push -u origin master
+        ;;
+
+esac
