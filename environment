@@ -1,0 +1,11 @@
+#!/bin/bash
+
+ENVNAME="$2"
+
+if [[ "$1" == "create" ]];then
+    (cd ~/Documents/environments; virtualenv $ENVNAME)
+elif [[ "$1" == "activate" ]];then
+    source ~/Documents/environments/$ENVNAME/bin/activate
+elif [[ "$1" == "delete" ]];then
+    (cd ~/Documents/environments; rm -r $ENVNAME)
+fi
