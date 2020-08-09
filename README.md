@@ -1,6 +1,6 @@
-# Batch Script Utilities
+# Bash Script Utilities
 
-Development of batch script utilities to aid task performance. 
+Development of bash script utilities to aid task performance. 
 
 **Virtual Environment Utilities**
 
